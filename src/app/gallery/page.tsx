@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { 
   MapPin, 
   Bed, 
@@ -229,9 +230,11 @@ export default function Gallery() {
                 >
                   <div className="relative">
                     <div className="h-64 overflow-hidden">
-                      <img
+                      <Image
                         src={property.image}
                         alt={property.title}
+                        width={400}
+                        height={256}
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -337,9 +340,11 @@ export default function Gallery() {
             >
               <div className="relative">
                 <div className="h-80 overflow-hidden">
-                  <img
+                  <Image
                     src={selectedProperty.image}
                     alt={selectedProperty.title}
+                    width={500}
+                    height={320}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

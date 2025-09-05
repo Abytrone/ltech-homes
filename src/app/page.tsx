@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { 
   ArrowRight, 
   Home, 
@@ -303,7 +304,7 @@ export default function HomePage() {
                       style={{ borderTopColor: 'transparent' }}
                     />
                   </span>
-                </Link>
+              </Link>
               </motion.div>
             </motion.div>
 
@@ -479,9 +480,11 @@ export default function HomePage() {
               >
                 {/* Property Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={property.image}
                     alt={property.title}
+                    width={400}
+                    height={192}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

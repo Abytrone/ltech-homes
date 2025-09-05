@@ -97,7 +97,7 @@ const Footer = () => {
                     >
                       {link.href === '/about' && <Users className="w-4 h-4" />}
                       {link.href === '/services' && <Briefcase className="w-4 h-4" />}
-                      {link.href === '/gallery' && <Image className="w-4 h-4" />}
+                      {link.href === '/gallery' && <Image className="w-4 h-4" />} {/* eslint-disable-line jsx-a11y/alt-text */}
                       {link.href === '/contact' && <Phone className="w-4 h-4" />}
                       <span>{link.label}</span>
                     </Link>
