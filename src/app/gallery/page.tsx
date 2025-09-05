@@ -3,14 +3,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Home, 
   MapPin, 
   Bed, 
   Bath, 
   Square, 
   Car,
-  Filter,
-  Search,
   Eye,
   Heart,
   Share2,
@@ -19,9 +16,28 @@ import {
 } from 'lucide-react'
 import { ThemeProvider } from '@/lib/theme-context'
 
+interface Property {
+  id: number
+  title: string
+  location: string
+  price: string
+  type: string
+  category: string
+  bedrooms: number
+  bathrooms: number
+  area: string
+  parking: number
+  image: string
+  description: string
+  features: string[]
+  agent: string
+  agentPhone: string
+  agentEmail: string
+}
+
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [selectedProperty, setSelectedProperty] = useState(null)
+  const [selectedProperty, setSelectedProperty] = useState<Property | null>(null)
 
   const categories = [
     { id: 'all', label: 'All Properties' },

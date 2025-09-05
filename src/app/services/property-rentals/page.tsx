@@ -16,7 +16,8 @@ import {
   Key,
   Search,
   Clock,
-  Building
+  Building,
+  UserCheck
 } from 'lucide-react'
 import { ThemeProvider } from '@/lib/theme-context'
 

@@ -6,10 +6,7 @@ import {
   Target, 
   Award, 
   Heart,
-  CheckCircle,
-  MapPin,
-  Calendar,
-  TrendingUp
+  Calendar
 } from 'lucide-react'
 import { ThemeProvider } from '@/lib/theme-context'
 
@@ -108,7 +105,7 @@ export default function About() {
               About <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">LTech Homes</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Your trusted partner in Ghana's real estate market for over 15 years. 
+              Your trusted partner in Ghana&apos;s real estate market for over 15 years. 
               We combine local expertise with innovative technology to deliver exceptional results.
             </p>
           </motion.div>
@@ -131,16 +128,16 @@ export default function About() {
                 <p>
                   Founded in 2008, LTech Homes began as a small real estate agency with a big dream: 
                   to transform how people buy, sell, and rent properties in Ghana. What started as a 
-                  local business in Accra has grown into one of Ghana's most trusted real estate companies.
+                  local business in Accra has grown into one of Ghana&apos;s most trusted real estate companies.
                 </p>
                 <p>
                   Our journey has been marked by continuous innovation, from being among the first to 
                   embrace digital property listings to implementing cutting-edge virtual tour technology. 
-                  We've helped over 1,000 families find their dream homes and assisted countless investors 
+                  We&apos;ve helped over 1,000 families find their dream homes and assisted countless investors 
                   in building their property portfolios.
                 </p>
                 <p>
-                  Today, we operate across Ghana's major cities - Accra, Kumasi, Tamale, and Takoradi - 
+                  Today, we operate across Ghana&apos;s major cities - Accra, Kumasi, Tamale, and Takoradi - 
                   with a team of dedicated professionals who share our commitment to excellence and 
                   client satisfaction.
                 </p>
@@ -344,7 +341,7 @@ export default function About() {
             </h2>
             <p className="text-xl md:text-2xl leading-relaxed mb-8">
               To provide exceptional real estate services that help our clients achieve their 
-              property dreams while contributing to the growth and development of Ghana's 
+              property dreams while contributing to the growth and development of Ghana&apos;s 
               real estate market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

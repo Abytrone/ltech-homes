@@ -16,7 +16,8 @@ import {
   Wrench,
   TrendingUp,
   BarChart3,
-  CheckCircle
+  CheckCircle,
+  Clock
 } from 'lucide-react'
 import { ThemeProvider } from '@/lib/theme-context'
 

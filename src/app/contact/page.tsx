@@ -11,8 +11,7 @@ import {
   CheckCircle,
   MessageSquare,
   User,
-  Building,
-  Calendar
+  Building
 } from 'lucide-react'
 import { ThemeProvider } from '@/lib/theme-context'
 
@@ -128,7 +127,7 @@ export default function Contact() {
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Ready to start your real estate journey? Contact our expert team today. 
-              We're here to help you find your perfect property or assist with any real estate needs.
+              We&apos;re here to help you find your perfect property or assist with any real estate needs.
             </p>
           </motion.div>
         </div>
@@ -185,7 +184,7 @@ export default function Contact() {
                   Send Us a Message
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </p>
               </div>
 
@@ -200,7 +199,7 @@ export default function Contact() {
                     Message Sent!
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Thank you for contacting us. We'll get back to you soon.
+                    Thank you for contacting us. We&apos;ll get back to you soon.
                   </p>
                 </motion.div>
               ) : (
