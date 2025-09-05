@@ -353,19 +353,21 @@ export default function Gallery() {
               </div>
               
               <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                      {selectedProperty.title}
-                    </h2>
-                    <div className="flex items-center text-gray-600 dark:text-gray-300 mb-4">
-                      <MapPin className="w-5 h-5 mr-2" />
-                      <span>{selectedProperty.location}</span>
+                <div className="mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex-1">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                        {selectedProperty.title}
+                      </h2>
+                      <div className="flex items-center text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">
+                        <MapPin className="w-5 h-5 mr-2" />
+                        <span>{selectedProperty.location}</span>
+                      </div>
                     </div>
+                    <span className="text-2xl sm:text-3xl font-bold text-[#DC2626] dark:text-[#F87171] sm:ml-4">
+                      {selectedProperty.price}
+                    </span>
                   </div>
-                  <span className="text-3xl font-bold text-[#DC2626] dark:text-[#F87171]">
-                    {selectedProperty.price}
-                  </span>
                 </div>
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -416,27 +418,25 @@ export default function Gallery() {
                 
                 <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Contact Agent</h3>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.agent}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300">{selectedProperty.agentEmail}</div>
-                    </div>
-                    <div className="flex space-x-3">
-                      <a
-                        href={`tel:${selectedProperty.agentPhone}`}
-                        className="bg-[#DC2626] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#B91C1C] transition-colors flex items-center space-x-2"
-                      >
-                        <Phone className="w-4 h-4" />
-                        <span>Call</span>
-                      </a>
-                      <a
-                        href={`mailto:${selectedProperty.agentEmail}`}
-                        className="bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center space-x-2"
-                      >
-                        <Mail className="w-4 h-4" />
-                        <span>Email</span>
-                      </a>
-                    </div>
+                  <div className="mb-4">
+                    <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.agent}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">{selectedProperty.agentEmail}</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href={`tel:${selectedProperty.agentPhone}`}
+                      className="bg-[#DC2626] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#B91C1C] transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span>Call</span>
+                    </a>
+                    <a
+                      href={`mailto:${selectedProperty.agentEmail}`}
+                      className="bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>Email</span>
+                    </a>
                   </div>
                 </div>
               </div>

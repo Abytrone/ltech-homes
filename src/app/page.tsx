@@ -66,9 +66,9 @@ export default function HomePage() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen">
+    <div className="min-h-screen">
       {/* Ultra Modern Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800">
+      <section className="relative h-screen min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800">
         {/* Dynamic Mesh Background */}
         <div className="absolute inset-0 opacity-20 dark:opacity-20">
           <div className="absolute inset-0 bg-gradient-to-r from-[#DC2626]/30 via-transparent to-[#F87171]/30"></div>
@@ -80,7 +80,7 @@ export default function HomePage() {
             `,
           }}></div>
         </div>
-
+        
         {/* 3D Floating Geometric Shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Large Rotating Cube */}
@@ -95,7 +95,7 @@ export default function HomePage() {
               repeat: Infinity, 
               ease: "linear" 
             }}
-            className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-[#DC2626] to-[#F87171] opacity-20"
+            className="absolute top-1/4 left-1/4 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-gradient-to-br from-[#DC2626] to-[#F87171] opacity-10 sm:opacity-15 md:opacity-20"
             style={{
               transform: 'perspective(1000px) rotateX(45deg) rotateY(45deg)',
               clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
@@ -114,7 +114,7 @@ export default function HomePage() {
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-r from-[#F87171] to-[#DC2626] opacity-30"
+            className="absolute top-1/3 right-1/4 w-8 sm:w-12 md:w-16 h-8 sm:h-12 md:h-16 bg-gradient-to-r from-[#F87171] to-[#DC2626] opacity-15 sm:opacity-20 md:opacity-30"
             style={{
               clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'
             }}
@@ -132,7 +132,7 @@ export default function HomePage() {
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="absolute bottom-1/3 left-1/3 w-12 h-12 bg-gradient-to-br from-[#DC2626] to-[#F87171] opacity-25"
+            className="absolute bottom-1/3 left-1/3 w-6 sm:w-8 md:w-12 h-6 sm:h-8 md:h-12 bg-gradient-to-br from-[#DC2626] to-[#F87171] opacity-15 sm:opacity-20 md:opacity-25"
             style={{
               transform: 'rotate(45deg)',
               clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'
@@ -142,7 +142,7 @@ export default function HomePage() {
 
         {/* Particle System */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(50)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full opacity-60"
@@ -166,12 +166,12 @@ export default function HomePage() {
         </div>
 
         {/* Main Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <div className="relative max-w-7xl px-4 sm:px-6 lg:px-8 text-center z-10 py-8 sm:py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            className="space-y-12"
+            className="space-y-6 sm:space-y-8 md:space-y-12"
           >
             {/* Animated Badge */}
             <motion.div
@@ -193,7 +193,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight px-4"
               style={{
                 textShadow: '0 0 30px rgba(220, 38, 38, 0.3), 0 0 60px rgba(248, 113, 113, 0.2)'
               }}
@@ -228,40 +228,40 @@ export default function HomePage() {
                 DREAM HOME
               </motion.span>
             </motion.h1>
-
+            
             {/* Subtitle with Typewriter Effect */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.5 }}
-              className="max-w-4xl mx-auto"
+              className="max-w-4xl mx-auto px-4"
             >
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 Experience the future of real estate with
               </p>
               <motion.p
-                className="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-[#F87171] to-[#DC2626] bg-clip-text text-transparent"
+                className="text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-[#F87171] to-[#DC2626] bg-clip-text text-transparent"
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 LTech Homes Ghana
-              </motion.p>
+            </motion.p>
             </motion.div>
-
+            
             {/* Modern CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-4 sm:pt-6 md:pt-8 px-4"
             >
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href="/gallery"
-                  className="group relative inline-flex items-center px-10 py-5 rounded-2xl font-semibold text-lg text-white overflow-hidden"
+            >
+              <Link
+                href="/gallery"
+                  className="group relative inline-flex items-center px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg text-white overflow-hidden w-full sm:w-auto justify-center"
                   style={{
                     background: 'linear-gradient(135deg, #DC2626 0%, #F87171 100%)',
                     boxShadow: '0 20px 40px rgba(220, 38, 38, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
@@ -271,7 +271,7 @@ export default function HomePage() {
                     className="absolute inset-0 bg-gradient-to-r from-[#F87171] to-[#DC2626] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                   <span className="relative z-10 flex items-center space-x-3">
-                    <span>Explore Properties</span>
+                <span>Explore Properties</span>
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
@@ -279,16 +279,16 @@ export default function HomePage() {
                       <ArrowRight className="w-5 h-5" />
                     </motion.div>
                   </span>
-                </Link>
+              </Link>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center px-10 py-5 rounded-2xl font-semibold text-lg text-gray-700 dark:text-white border-2 border-gray-300 dark:border-white/20 backdrop-blur-sm hover:border-[#DC2626] dark:hover:border-white transition-all duration-300"
+              <Link
+                href="/contact"
+                  className="group relative inline-flex items-center px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg text-gray-700 dark:text-white border-2 border-gray-300 dark:border-white/20 backdrop-blur-sm hover:border-[#DC2626] dark:hover:border-white transition-all duration-300 w-full sm:w-auto justify-center"
                   style={{
                     background: 'rgba(255, 255, 255, 0.2)',
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)'
@@ -312,7 +312,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 2.1 }}
-              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-12"
+              className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-2xl mx-auto pt-4 sm:pt-6 md:pt-8 px-4"
             >
               {[
                 { number: "500+", label: "Properties" },
@@ -325,13 +325,13 @@ export default function HomePage() {
                   whileHover={{ scale: 1.1 }}
                 >
                   <motion.div
-                    className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent"
+                    className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent"
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                   >
                     {stat.number}
                   </motion.div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-2 leading-tight">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -350,7 +350,7 @@ export default function HomePage() {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-6 h-10 border-2 border-gray-400 dark:border-white/30 rounded-full flex justify-center"
           >
-            <motion.div
+        <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="w-1 h-3 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full mt-2"
@@ -629,7 +629,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-      </div>
+    </div>
     </ThemeProvider>
   )
 }
