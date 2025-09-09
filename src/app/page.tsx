@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
@@ -9,11 +10,38 @@ import {
   Shield, 
   Users, 
   MapPin, 
-  Star
+  Star,
+  Bed,
+  Bath,
+  Square,
+  Car,
+  Eye,
+  Phone,
+  Mail
 } from 'lucide-react'
 import { ThemeProvider } from '@/lib/theme-context'
 
+interface Property {
+  id: number
+  title: string
+  location: string
+  price: string
+  type: string
+  category: string
+  bedrooms: number
+  bathrooms: number
+  area: string
+  parking: number
+  image: string
+  description: string
+  features: string[]
+  agent: string
+  agentPhone: string
+  agentEmail: string
+}
+
 export default function HomePage() {
+  const [selectedProperty, setSelectedProperty] = useState<Property | null>(null)
   const features = [
     {
       icon: Home,
@@ -446,28 +474,58 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                id: 1,
                 title: "Luxury Villa in Accra",
                 location: "East Legon, Accra",
                 price: "GHS 2,500,000",
                 type: "Villa",
-                features: ["5 Bedrooms", "4 Bathrooms", "Swimming Pool", "Garden"],
-                image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop&crop=center"
+                category: "residential",
+                bedrooms: 5,
+                bathrooms: 4,
+                area: "450 sqm",
+                parking: 2,
+                image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop&crop=center",
+                description: "Stunning modern villa with contemporary design, premium finishes, and beautiful landscaping. Perfect for families seeking luxury and comfort.",
+                features: ["Swimming Pool", "Garden", "Security System", "Modern Kitchen", "Master Suite", "5 Bedrooms", "4 Bathrooms"],
+                agent: "Kwame Asante",
+                agentPhone: "+233 24 123 4567",
+                agentEmail: "kwame@ltechhomes.com"
               },
               {
+                id: 2,
                 title: "Modern Apartment Complex",
                 location: "Cantonments, Accra",
                 price: "GHS 1,200,000",
                 type: "Apartment",
-                features: ["3 Bedrooms", "2 Bathrooms", "Balcony", "Parking"],
-                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center"
+                category: "residential",
+                bedrooms: 3,
+                bathrooms: 2,
+                area: "280 sqm",
+                parking: 2,
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center",
+                description: "Contemporary apartment with modern amenities and excellent location. Ideal for young professionals and small families.",
+                features: ["Balcony", "Parking", "Modern Design", "Security", "Gym Access", "3 Bedrooms", "2 Bathrooms"],
+                agent: "Ama Serwaa",
+                agentPhone: "+233 24 123 4568",
+                agentEmail: "ama@ltechhomes.com"
               },
               {
+                id: 3,
                 title: "Family Home in Kumasi",
                 location: "Ahodwo, Kumasi",
                 price: "GHS 800,000",
                 type: "House",
-                features: ["4 Bedrooms", "3 Bathrooms", "Garage", "Security"],
-                image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&crop=center"
+                category: "residential",
+                bedrooms: 4,
+                bathrooms: 3,
+                area: "320 sqm",
+                parking: 2,
+                image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&crop=center",
+                description: "Beautiful family home in a quiet neighborhood with excellent schools nearby. Perfect for growing families.",
+                features: ["Garden", "Garage", "Modern Kitchen", "Living Room", "Study Room", "4 Bedrooms", "3 Bathrooms"],
+                agent: "Kofi Mensah",
+                agentPhone: "+233 24 123 4569",
+                agentEmail: "kofi@ltechhomes.com"
               }
             ].map((property, index) => (
               <motion.div
@@ -506,9 +564,35 @@ export default function HomePage() {
                     {property.price}
                   </p>
                   
+                  {/* Property Details */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-300">
+                      {property.bedrooms > 0 && (
+                        <div className="flex items-center">
+                          <Bed className="w-4 h-4 mr-1" />
+                          <span>{property.bedrooms}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center">
+                        <Bath className="w-4 h-4 mr-1" />
+                        <span>{property.bathrooms}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Square className="w-4 h-4 mr-1" />
+                        <span>{property.area}</span>
+                      </div>
+                      {property.parking > 0 && (
+                        <div className="flex items-center">
+                          <Car className="w-4 h-4 mr-1" />
+                          <span>{property.parking}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
                   {/* Features */}
                   <div className="grid grid-cols-2 gap-2 mb-6">
-                    {property.features.map((feature, featureIndex) => (
+                    {property.features.slice(0, 4).map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                         <span className="w-2 h-2 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full mr-2"></span>
                         {feature}
@@ -518,11 +602,13 @@ export default function HomePage() {
 
                   {/* CTA Button */}
                   <motion.button
+                    onClick={() => setSelectedProperty(property)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
                   >
-                    View Details
+                    <Eye className="w-4 h-4" />
+                    <span>View Details</span>
                   </motion.button>
                 </div>
               </motion.div>
@@ -632,6 +718,135 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Property Modal */}
+      <AnimatePresence>
+        {selectedProperty && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProperty(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white dark:bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative">
+                <div className="h-80 overflow-hidden">
+                  <Image
+                    src={selectedProperty.image}
+                    alt={selectedProperty.title}
+                    width={500}
+                    height={320}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <button
+                  onClick={() => setSelectedProperty(null)}
+                  className="absolute top-4 right-4 w-10 h-10 text-gray-800 dark:text-white bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white dark:bg-gray-900 transition-colors"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="p-8">
+                <div className="mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex-1">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                        {selectedProperty.title}
+                      </h2>
+                      <div className="flex items-center text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">
+                        <MapPin className="w-5 h-5 mr-2" />
+                        <span>{selectedProperty.location}</span>
+                      </div>
+                    </div>
+                    <span className="text-2xl sm:text-3xl font-bold text-[#DC2626] dark:text-[#F87171] sm:ml-4">
+                      {selectedProperty.price}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  {selectedProperty.bedrooms > 0 && (
+                    <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
+                      <Bed className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.bedrooms}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-300">Bedrooms</div>
+                    </div>
+                  )}
+                  <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
+                    <Bath className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                    <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.bathrooms}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">Bathrooms</div>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
+                    <Square className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                    <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.area}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">Area</div>
+                  </div>
+                  {selectedProperty.parking > 0 && (
+                    <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
+                      <Car className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.parking}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-300">Parking</div>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Description</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {selectedProperty.description}
+                  </p>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Features</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {selectedProperty.features.map((feature, index) => (
+                      <div key={index} className="flex items-center">
+                        <div className="w-2 h-2 bg-[#DC2626] rounded-full mr-3"></div>
+                        <span className="text-gray-600 dark:text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">Contact Agent</h3>
+                  <div className="mb-4">
+                    <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.agent}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">{selectedProperty.agentEmail}</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href={`tel:${selectedProperty.agentPhone}`}
+                      className="bg-[#DC2626] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#B91C1C] transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <Phone className="w-4 h-4" />
+                      <span>Call</span>
+                    </a>
+                    <a
+                      href={`mailto:${selectedProperty.agentEmail}`}
+                      className="bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>Email</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
     </ThemeProvider>
   )

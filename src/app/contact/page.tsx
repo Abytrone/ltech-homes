@@ -62,7 +62,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+233 24 123 4567', '+233 30 123 4567'],
+      details: ['+233 54 933 7820', '+233 24 693 2582'],
       action: 'Call Now'
     },
     {
@@ -83,29 +83,15 @@ export default function Contact() {
     {
       city: 'Accra',
       address: '123 Independence Avenue, Accra',
-      phone: '+233 24 123 4567',
+      phone: '+233 54 933 7820',
       email: 'accra@ltechhomes.com',
-      hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
-    },
-    {
-      city: 'Kumasi',
-      address: '456 Harper Road, Kumasi',
-      phone: '+233 24 123 4568',
-      email: 'kumasi@ltechhomes.com',
       hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
     },
     {
       city: 'Tamale',
       address: '789 Central Market Road, Tamale',
-      phone: '+233 24 123 4569',
+      phone: '+233 24 693 2582',
       email: 'tamale@ltechhomes.com',
-      hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
-    },
-    {
-      city: 'Takoradi',
-      address: '321 Harbour Road, Takoradi',
-      phone: '+233 24 123 4570',
-      email: 'takoradi@ltechhomes.com',
       hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
     }
   ]
