@@ -15,7 +15,7 @@ import {
   Phone,
   Mail
 } from 'lucide-react'
-import { ThemeProvider } from '@/lib/theme-context'
+import PropertyInquiryModal from '@/components/PropertyInquiryModal'
 
 interface Property {
   id: number
@@ -39,6 +39,7 @@ interface Property {
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null)
+  const [inquiryProperty, setInquiryProperty] = useState<Property | null>(null)
 
   const categories = [
     { id: 'all', label: 'All Properties' },
@@ -164,8 +165,7 @@ export default function Gallery() {
     : properties.filter(property => property.category === selectedCategory)
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-200 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -435,13 +435,16 @@ export default function Gallery() {
                       <Phone className="w-4 h-4" />
                       <span>Call</span>
                     </a>
-                    <a
-                      href={`mailto:${selectedProperty.agentEmail}`}
+                    <button
+                      onClick={() => {
+                        setInquiryProperty(selectedProperty)
+                        setSelectedProperty(null)
+                      }}
                       className="bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center space-x-2"
                     >
                       <Mail className="w-4 h-4" />
-                      <span>Email</span>
-                    </a>
+                      <span>Inquire</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -449,7 +452,18 @@ export default function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
-      </div>
-    </ThemeProvider>
+
+      {inquiryProperty && (
+        <PropertyInquiryModal
+          isOpen={!!inquiryProperty}
+          onClose={() => setInquiryProperty(null)}
+          property={{
+            title: inquiryProperty.title,
+            price: inquiryProperty.price,
+            location: inquiryProperty.location
+          }}
+        />
+      )}
+    </div>
   )
 }

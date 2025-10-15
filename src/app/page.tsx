@@ -19,7 +19,6 @@ import {
   Phone,
   Mail
 } from 'lucide-react'
-import { ThemeProvider } from '@/lib/theme-context'
 
 interface Property {
   id: number
@@ -94,7 +93,6 @@ export default function HomePage() {
   ]
 
   return (
-    <ThemeProvider>
     <div className="min-h-screen">
       {/* Ultra Modern Hero Section */}
       <section className="relative h-screen min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800">
@@ -848,6 +846,5 @@ export default function HomePage() {
         )}
       </AnimatePresence>
     </div>
-    </ThemeProvider>
   )
 }

@@ -1,43 +1,29 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #DC2626;
-  --primary-light: #EF4444;
-  --primary-dark: #B91C1C;
-  --secondary: #F87171;
-  --secondary-light: #FCA5A5;
-  --secondary-dark: #EF4444;
-}
+@variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
-  --color-secondary: var(--secondary);
-  --color-secondary-light: var(--secondary-light);
-  --color-secondary-dark: var(--secondary-dark);
-  --font-sans: var(--font-quicksand);
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --primary: #F87171;
-  --primary-light: #FCA5A5;
-  --primary-dark: #EF4444;
-  --secondary: #DC2626;
-  --secondary-light: #EF4444;
-  --secondary-dark: #B91C1C;
+@theme {
+  --color-primary: #DC2626;
+  --color-primary-light: #EF4444;
+  --color-primary-dark: #B91C1C;
+  --color-secondary: #F87171;
+  --color-secondary-light: #FCA5A5;
+  --color-secondary-dark: #EF4444;
+  --font-family-sans: var(--font-quicksand), system-ui, -apple-system, sans-serif;
+  
+  --color-background: #ffffff;
+  --color-foreground: #171717;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: white;
+  color: #171717;
   font-family: var(--font-quicksand), system-ui, -apple-system, sans-serif;
+}
+
+.dark body {
+  background-color: #0a0a0a;
+  color: #ededed;
 }
 
 /* Custom scrollbar */
@@ -49,13 +35,17 @@ body {
   background: #f1f1f1;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  background: linear-gradient(to bottom, #DC2626, #F87171);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--primary-dark), var(--secondary-dark));
+  background: linear-gradient(to bottom, #B91C1C, #EF4444);
 }
 
 /* Smooth scrolling */
@@ -92,7 +82,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, #DC2626, #F87171);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -151,6 +141,70 @@ html {
 /* Custom focus styles */
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Leaflet Map Custom Styles */
+.leaflet-container {
+  font-family: var(--font-quicksand), system-ui, -apple-system, sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  font-family: var(--font-quicksand), system-ui, -apple-system, sans-serif;
+}
+
+.leaflet-popup-tip {
+  background: white;
+}
+
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+.leaflet-control-zoom a {
+  background-color: white;
+  color: #DC2626;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #DC2626;
+  color: white;
+}
+
+/* Tooltip Styles */
+.leaflet-tooltip.custom-tooltip {
+  background: linear-gradient(135deg, #DC2626, #F87171);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: var(--font-quicksand), system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+
+.leaflet-tooltip.custom-tooltip::before {
+  border-right-color: #DC2626;
+}
+
+.dark .leaflet-tooltip.custom-tooltip {
+  background: linear-gradient(135deg, #F87171, #DC2626);
+}
+
+.dark .leaflet-tooltip.custom-tooltip::before {
+  border-right-color: #F87171;
 }
 
 /* Loading animation */

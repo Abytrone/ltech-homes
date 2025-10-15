@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Home, Users, Briefcase, Image, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ThemeToggle from './ThemeToggle'
-import { ThemeProvider } from '@/lib/theme-context'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,11 +30,10 @@ const Navigation = () => {
   ]
 
   return (
-    <ThemeProvider>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={cn(
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
             ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
@@ -140,8 +138,7 @@ const Navigation = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      </motion.nav>
-    </ThemeProvider>
+    </motion.nav>
   )
 }
 

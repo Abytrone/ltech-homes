@@ -13,7 +13,20 @@ import {
   User,
   Building
 } from 'lucide-react'
-import { ThemeProvider } from '@/lib/theme-context'
+import { sendContactEmail } from '@/app/actions/email'
+import dynamic from 'next/dynamic'
+
+const ContactMap = dynamic(() => import('@/components/ContactMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-96 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
+      <div className="text-center">
+        <MapPin className="w-12 h-12 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2 animate-pulse" />
+        <p className="text-gray-600 dark:text-gray-300 font-semibold">Loading Map...</p>
+      </div>
+    </div>
+  )
+})
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -25,6 +38,8 @@ export default function Contact() {
     service: ''
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -33,30 +48,38 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData)
-    setIsSubmitted(true)
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        service: ''
-      })
-    }, 3000)
+    setIsSubmitting(true)
+    setErrorMessage('')
+
+    const result = await sendContactEmail(formData)
+
+    setIsSubmitting(false)
+
+    if (result.success) {
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          service: ''
+        })
+      }, 3000)
+    } else {
+      setErrorMessage(result.error || 'Failed to send message. Please try again.')
+    }
   }
 
   const contactInfo = [
     {
       icon: MapPin,
       title: 'Visit Our Office',
-      details: ['123 Independence Avenue', 'Accra, Ghana'],
+      details: ['Tech Hostels, UDS', 'Tamale, Ghana'],
       action: 'Get Directions'
     },
     {
@@ -80,25 +103,24 @@ export default function Contact() {
   ]
 
   const offices = [
-    {
-      city: 'Accra',
-      address: '123 Independence Avenue, Accra',
-      phone: '+233 54 933 7820',
-      email: 'accra@ltechhomes.com',
-      hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
-    },
+    // {
+    //   city: 'Accra',
+    //   address: '123 Independence Avenue, Accra',
+    //   phone: '+233 54 933 7820',
+    //   email: 'accra@ltechhomes.com',
+    //   hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
+    // },
     {
       city: 'Tamale',
-      address: '789 Central Market Road, Tamale',
+      address: 'Tech Hostels, UDS, Tamale',
       phone: '+233 24 693 2582',
-      email: 'tamale@ltechhomes.com',
+      email: 'info@ltechhomes.com',
       hours: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM'
     }
   ]
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-200 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -306,12 +328,28 @@ export default function Contact() {
                     </div>
                   </div>
 
+                  {errorMessage && (
+                    <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}
@@ -324,18 +362,13 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              {/* Map Placeholder */}
+              {/* Interactive Map */}
               <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800">
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">
-                  Our Location
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center gap-2">
+                  <MapPin className="w-7 h-7 text-[#DC2626] dark:text-[#F87171]" />
+                  <span>Find Us Here</span>
                 </h3>
-                <div className="h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
-                    <p className="text-gray-600 dark:text-gray-300 font-semibold">Interactive Map</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">123 Independence Avenue, Accra</p>
-                  </div>
-                </div>
+                <ContactMap />
               </div>
 
               {/* Office Locations */}
@@ -436,7 +469,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      </div>
-    </ThemeProvider>
+    </div>
   )
 }

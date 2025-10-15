@@ -20,7 +20,6 @@ import {
   Hammer
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { ThemeProvider } from '@/lib/theme-context'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -49,8 +48,7 @@ const Footer = () => {
   }
 
   return (
-    <ThemeProvider>
-      <footer className="bg-gray-900 dark:bg-gray-950 text-white">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -145,8 +143,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[#F87171] mt-0.5" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                    123 Independence Avenue<br />
-                    Accra, Ghana
+                    Tech Hostels, UDS<br />
+                    Tamale, Ghana
                   </p>
                 </div>
               </div>
@@ -177,8 +175,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      </footer>
-    </ThemeProvider>
+    </footer>
   )
 }
 
