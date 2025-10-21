@@ -98,12 +98,12 @@ export default function HomePage() {
       <section className="relative h-screen min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800">
         {/* Dynamic Mesh Background */}
         <div className="absolute inset-0 opacity-20 dark:opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#DC2626]/30 via-transparent to-[#F87171]/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8A001]/30 via-transparent to-[#E8A001]/30"></div>
           <div className="absolute inset-0" style={{
             backgroundImage: `
-              radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(248, 113, 113, 0.3) 0%, transparent 50%),
-              radial-gradient(circle at 40% 40%, rgba(220, 38, 38, 0.2) 0%, transparent 50%)
+              radial-gradient(circle at 20% 80%, rgba(232, 160, 1, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(232, 160, 1, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(232, 160, 1, 0.2) 0%, transparent 50%)
             `,
           }}></div>
         </div>
@@ -122,7 +122,7 @@ export default function HomePage() {
               repeat: Infinity, 
               ease: "linear" 
             }}
-            className="absolute top-1/4 left-1/4 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-gradient-to-br from-[#DC2626] to-[#F87171] opacity-10 sm:opacity-15 md:opacity-20"
+            className="absolute top-1/4 left-1/4 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-[#E8A001] opacity-10 sm:opacity-15 md:opacity-20"
             style={{
               transform: 'perspective(1000px) rotateX(45deg) rotateY(45deg)',
               clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
@@ -141,7 +141,7 @@ export default function HomePage() {
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="absolute top-1/3 right-1/4 w-8 sm:w-12 md:w-16 h-8 sm:h-12 md:h-16 bg-gradient-to-r from-[#F87171] to-[#DC2626] opacity-15 sm:opacity-20 md:opacity-30"
+            className="absolute top-1/3 right-1/4 w-8 sm:w-12 md:w-16 h-8 sm:h-12 md:h-16 bg-[#E8A001] opacity-15 sm:opacity-20 md:opacity-30"
             style={{
               clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)'
             }}
@@ -159,7 +159,7 @@ export default function HomePage() {
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="absolute bottom-1/3 left-1/3 w-6 sm:w-8 md:w-12 h-6 sm:h-8 md:h-12 bg-gradient-to-br from-[#DC2626] to-[#F87171] opacity-15 sm:opacity-20 md:opacity-25"
+            className="absolute bottom-1/3 left-1/3 w-6 sm:w-8 md:w-12 h-6 sm:h-8 md:h-12 bg-[#E8A001] opacity-15 sm:opacity-20 md:opacity-25"
             style={{
               transform: 'rotate(45deg)',
               clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'
@@ -172,7 +172,7 @@ export default function HomePage() {
           {[...Array(30)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full opacity-60"
+              className="absolute w-1 h-1 bg-[#E8A001] rounded-full opacity-60"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -205,12 +205,12 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#DC2626]/10 to-[#F87171]/10 dark:from-[#DC2626]/20 dark:to-[#F87171]/20 border border-[#DC2626]/20 dark:border-[#DC2626]/30 backdrop-blur-sm"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-[#E8A001]/10 dark:bg-[#E8A001]/20 border border-[#E8A001]/20 dark:border-[#E8A001]/30 backdrop-blur-sm"
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="w-3 h-3 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full mr-3"
+                className="w-3 h-3 bg-[#E8A001] rounded-full mr-3"
               />
               <span className="text-sm font-medium text-gray-700 dark:text-white/90">Premium Real Estate Solutions</span>
             </motion.div>
@@ -222,11 +222,11 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.7 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight px-4"
               style={{
-                textShadow: '0 0 30px rgba(220, 38, 38, 0.3), 0 0 60px rgba(248, 113, 113, 0.2)'
+                textShadow: '0 0 30px rgba(232, 160, 1, 0.3), 0 0 60px rgba(232, 160, 1, 0.2)'
               }}
             >
               <motion.span 
-                className="bg-gradient-to-r from-[#DC2626] via-[#F87171] to-[#DC2626] bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-[#E8A001] via-[#E8A001] to-[#E8A001] bg-clip-text text-transparent"
                 animate={{
                   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                 }}
@@ -237,7 +237,7 @@ export default function HomePage() {
                 }}
                 style={{
                   backgroundSize: '300% 300%',
-                  filter: 'drop-shadow(0 0 20px rgba(220, 38, 38, 0.5))'
+                  filter: 'drop-shadow(0 0 20px rgba(232, 160, 1, 0.5))'
                 }}
               >
                 FIND YOUR
@@ -267,7 +267,7 @@ export default function HomePage() {
                 Experience the future of real estate with
               </p>
               <motion.p
-                className="text-xl sm:text-2xl md:text-3xl font-semibold bg-gradient-to-r from-[#F87171] to-[#DC2626] bg-clip-text text-transparent"
+                className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#E8A001]"
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -290,12 +290,12 @@ export default function HomePage() {
                 href="/gallery"
                   className="group relative inline-flex items-center px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg text-white overflow-hidden w-full sm:w-auto justify-center"
                   style={{
-                    background: 'linear-gradient(135deg, #DC2626 0%, #F87171 100%)',
-                    boxShadow: '0 20px 40px rgba(220, 38, 38, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                    background: '#E8A001',
+                    boxShadow: '0 20px 40px rgba(232, 160, 1, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)'
                   }}
                 >
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-[#F87171] to-[#DC2626] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-[#E8A001] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                   <span className="relative z-10 flex items-center space-x-3">
                 <span>Explore Properties</span>
@@ -315,7 +315,7 @@ export default function HomePage() {
               >
               <Link
                 href="/contact"
-                  className="group relative inline-flex items-center px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg text-gray-700 dark:text-white border-2 border-gray-300 dark:border-white/20 backdrop-blur-sm hover:border-[#DC2626] dark:hover:border-white transition-all duration-300 w-full sm:w-auto justify-center"
+                  className="group relative inline-flex items-center px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg text-gray-700 dark:text-white border-2 border-gray-300 dark:border-white/20 backdrop-blur-sm hover:border-[#E8A001] dark:hover:border-white transition-all duration-300 w-full sm:w-auto justify-center"
                   style={{
                     background: 'rgba(255, 255, 255, 0.2)',
                     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)'
@@ -352,7 +352,7 @@ export default function HomePage() {
                   whileHover={{ scale: 1.1 }}
                 >
                   <motion.div
-                    className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent"
+                    className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#E8A001]"
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                   >
@@ -375,12 +375,12 @@ export default function HomePage() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-gray-400 dark:border-white/30 rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-[#E8A001] dark:border-[#E8A001] rounded-full flex justify-center"
           >
         <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full mt-2"
+              className="w-1 h-3 bg-[#E8A001] rounded-full mt-2"
             />
           </motion.div>
         </motion.div>
@@ -413,7 +413,7 @@ export default function HomePage() {
                 whileHover={{ y: -5 }}
                 className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-800"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -429,7 +429,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-[#DC2626] to-[#F87171]">
+      <section className="py-20 bg-[#E8A001]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -544,7 +544,7 @@ export default function HomePage() {
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-[#E8A001] text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {property.type}
                   </div>
                 </div>
@@ -558,7 +558,7 @@ export default function HomePage() {
                     <span className="mr-2">📍</span>
                     {property.location}
                   </p>
-                  <p className="text-2xl font-bold bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent mb-4">
+                  <p className="text-2xl font-bold text-[#E8A001] mb-4">
                     {property.price}
                   </p>
                   
@@ -592,7 +592,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-2 gap-2 mb-6">
                     {property.features.slice(0, 4).map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                        <span className="w-2 h-2 bg-gradient-to-r from-[#DC2626] to-[#F87171] rounded-full mr-2"></span>
+                        <span className="w-2 h-2 bg-[#E8A001] rounded-full mr-2"></span>
                         {feature}
                       </div>
                     ))}
@@ -603,7 +603,7 @@ export default function HomePage() {
                     onClick={() => setSelectedProperty(property)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                    className="w-full bg-[#E8A001] text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
                   >
                     <Eye className="w-4 h-4" />
                     <span>View Details</span>
@@ -622,7 +622,7 @@ export default function HomePage() {
           >
             <Link
               href="/gallery"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-[#E8A001] text-white rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <span>View All Properties</span>
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -666,7 +666,7 @@ export default function HomePage() {
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-full flex items-center justify-center text-white font-semibold mr-3 shadow-lg">
+                  <div className="w-10 h-10 bg-[#E8A001] rounded-full flex items-center justify-center text-white font-semibold mr-3 shadow-lg">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
@@ -702,13 +702,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
+                className="bg-[#E8A001] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 Start Your Search
               </Link>
               <Link
                 href="/services"
-                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold text-lg hover:border-[#DC2626] hover:text-[#DC2626] dark:hover:border-[#F87171] dark:hover:text-[#F87171] transition-all duration-300"
+                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold text-lg hover:border-[#E8A001] hover:text-[#E8A001] dark:hover:border-[#E8A001] dark:hover:text-[#E8A001] transition-all duration-300"
               >
                 Our Services
               </Link>
@@ -765,7 +765,7 @@ export default function HomePage() {
                         <span>{selectedProperty.location}</span>
                       </div>
                     </div>
-                    <span className="text-2xl sm:text-3xl font-bold text-[#DC2626] dark:text-[#F87171] sm:ml-4">
+                    <span className="text-2xl sm:text-3xl font-bold text-[#E8A001] sm:ml-4">
                       {selectedProperty.price}
                     </span>
                   </div>
@@ -774,24 +774,24 @@ export default function HomePage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                   {selectedProperty.bedrooms > 0 && (
                     <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                      <Bed className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                      <Bed className="w-6 h-6 text-[#E8A001] mx-auto mb-2" />
                       <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.bedrooms}</div>
                       <div className="text-sm text-gray-600 dark:text-gray-300">Bedrooms</div>
                     </div>
                   )}
                   <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                    <Bath className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                    <Bath className="w-6 h-6 text-[#E8A001] mx-auto mb-2" />
                     <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.bathrooms}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-300">Bathrooms</div>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                    <Square className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                    <Square className="w-6 h-6 text-[#E8A001] mx-auto mb-2" />
                     <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.area}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-300">Area</div>
                   </div>
                   {selectedProperty.parking > 0 && (
                     <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                      <Car className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                      <Car className="w-6 h-6 text-[#E8A001] mx-auto mb-2" />
                       <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.parking}</div>
                       <div className="text-sm text-gray-600 dark:text-gray-300">Parking</div>
                     </div>
@@ -810,7 +810,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {selectedProperty.features.map((feature, index) => (
                       <div key={index} className="flex items-center">
-                        <div className="w-2 h-2 bg-[#DC2626] rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-[#E8A001] rounded-full mr-3"></div>
                         <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -826,7 +826,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-2 gap-3">
                     <a
                       href={`tel:${selectedProperty.agentPhone}`}
-                      className="bg-[#DC2626] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#B91C1C] transition-colors flex items-center justify-center space-x-2"
+                      className="bg-[#E8A001] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#D4A000] transition-colors flex items-center justify-center space-x-2"
                     >
                       <Phone className="w-4 h-4" />
                       <span>Call</span>

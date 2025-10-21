@@ -176,7 +176,7 @@ export default function Gallery() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-              Property <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">Gallery</span>
+              Property <span className="bg-[#E8A001] bg-clip-text text-transparent">Gallery</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Discover our curated collection of premium properties across Ghana. 
@@ -196,7 +196,7 @@ export default function Gallery() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white shadow-lg'
+                    ? 'bg-[#E8A001] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
@@ -259,7 +259,7 @@ export default function Gallery() {
                       <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 line-clamp-1 mb-2">
                         {property.title}
                       </h3>
-                      <span className="text-2xl font-bold text-[#DC2626] dark:text-[#F87171]">
+                      <span className="text-2xl font-bold text-[#E8A001] dark:text-[#E8A001]">
                         {property.price}
                       </span>
                     </div>
@@ -301,7 +301,7 @@ export default function Gallery() {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => setSelectedProperty(property)}
-                        className="flex-1 bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                        className="flex-1 bg-[#E8A001] text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
                       >
                         <Eye className="w-4 h-4" />
                         <span>View Details</span>
@@ -369,7 +369,7 @@ export default function Gallery() {
                         <span>{selectedProperty.location}</span>
                       </div>
                     </div>
-                    <span className="text-2xl sm:text-3xl font-bold text-[#DC2626] dark:text-[#F87171] sm:ml-4">
+                    <span className="text-2xl sm:text-3xl font-bold text-[#E8A001] dark:text-[#E8A001] sm:ml-4">
                       {selectedProperty.price}
                     </span>
                   </div>
@@ -378,24 +378,24 @@ export default function Gallery() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                   {selectedProperty.bedrooms > 0 && (
                     <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                      <Bed className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                      <Bed className="w-6 h-6 text-[#E8A001] dark:text-[#E8A001] mx-auto mb-2" />
                       <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.bedrooms}</div>
                       <div className="text-sm text-gray-600 dark:text-gray-300">Bedrooms</div>
                     </div>
                   )}
                   <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                    <Bath className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                    <Bath className="w-6 h-6 text-[#E8A001] dark:text-[#E8A001] mx-auto mb-2" />
                     <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.bathrooms}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-300">Bathrooms</div>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                    <Square className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                    <Square className="w-6 h-6 text-[#E8A001] dark:text-[#E8A001] mx-auto mb-2" />
                     <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.area}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-300">Area</div>
                   </div>
                   {selectedProperty.parking > 0 && (
                     <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center">
-                      <Car className="w-6 h-6 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2" />
+                      <Car className="w-6 h-6 text-[#E8A001] dark:text-[#E8A001] mx-auto mb-2" />
                       <div className="font-semibold text-gray-800 dark:text-gray-200">{selectedProperty.parking}</div>
                       <div className="text-sm text-gray-600 dark:text-gray-300">Parking</div>
                     </div>
@@ -414,7 +414,7 @@ export default function Gallery() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {selectedProperty.features.map((feature, index) => (
                       <div key={index} className="flex items-center">
-                        <div className="w-2 h-2 bg-[#DC2626] rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-[#E8A001] rounded-full mr-3"></div>
                         <span className="text-gray-600 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -430,7 +430,7 @@ export default function Gallery() {
                   <div className="grid grid-cols-2 gap-3">
                     <a
                       href={`tel:${selectedProperty.agentPhone}`}
-                      className="bg-[#DC2626] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#B91C1C] transition-colors flex items-center justify-center space-x-2"
+                      className="bg-[#E8A001] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#B91C1C] transition-colors flex items-center justify-center space-x-2"
                     >
                       <Phone className="w-4 h-4" />
                       <span>Call</span>

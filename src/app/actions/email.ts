@@ -48,11 +48,11 @@ export async function sendContactEmail(formData: ContactFormData) {
             <style>
               body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
               .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-              .header { background: linear-gradient(135deg, #DC2626, #F87171); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+              .header { background: linear-gradient(135deg, #E8A001, #E8A001); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
               .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
               .field { margin-bottom: 20px; }
-              .label { font-weight: bold; color: #DC2626; display: block; margin-bottom: 5px; }
-              .value { background: white; padding: 10px; border-left: 3px solid #DC2626; border-radius: 4px; }
+              .label { font-weight: bold; color: #E8A001; display: block; margin-bottom: 5px; }
+              .value { background: white; padding: 10px; border-left: 3px solid #E8A001; border-radius: 4px; }
               .footer { text-align: center; margin-top: 20px; padding: 20px; color: #666; font-size: 12px; }
             </style>
           </head>
@@ -138,14 +138,14 @@ export async function sendPropertyInquiry(inquiryData: PropertyInquiryData) {
             <style>
               body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
               .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-              .header { background: linear-gradient(135deg, #DC2626, #F87171); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-              .property-card { background: white; border: 2px solid #DC2626; padding: 20px; margin: 20px 0; border-radius: 8px; }
-              .property-title { color: #DC2626; font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+              .header { background: linear-gradient(135deg, #E8A001, #E8A001); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+              .property-card { background: white; border: 2px solid #E8A001; padding: 20px; margin: 20px 0; border-radius: 8px; }
+              .property-title { color: #E8A001; font-size: 24px; font-weight: bold; margin-bottom: 10px; }
               .property-details { color: #666; margin-bottom: 5px; }
               .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
               .field { margin-bottom: 20px; }
-              .label { font-weight: bold; color: #DC2626; display: block; margin-bottom: 5px; }
-              .value { background: white; padding: 10px; border-left: 3px solid #DC2626; border-radius: 4px; }
+              .label { font-weight: bold; color: #E8A001; display: block; margin-bottom: 5px; }
+              .value { background: white; padding: 10px; border-left: 3px solid #E8A001; border-radius: 4px; }
               .footer { text-align: center; margin-top: 20px; padding: 20px; color: #666; font-size: 12px; }
             </style>
           </head>

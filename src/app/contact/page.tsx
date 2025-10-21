@@ -21,7 +21,7 @@ const ContactMap = dynamic(() => import('@/components/ContactMap'), {
   loading: () => (
     <div className="h-96 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
       <div className="text-center">
-        <MapPin className="w-12 h-12 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2 animate-pulse" />
+        <MapPin className="w-12 h-12 text-[#E8A001] dark:text-[#E8A001] mx-auto mb-2 animate-pulse" />
         <p className="text-gray-600 dark:text-gray-300 font-semibold">Loading Map...</p>
       </div>
     </div>
@@ -131,7 +131,7 @@ export default function Contact() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-              Get In <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">Touch</span>
+              Get In <span className="bg-[#E8A001] bg-clip-text text-transparent">Touch</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Ready to start your real estate journey? Contact our expert team today. 
@@ -154,7 +154,7 @@ export default function Contact() {
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800 text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
@@ -167,7 +167,7 @@ export default function Contact() {
                     </p>
                   ))}
                 </div>
-                <button className="text-[#DC2626] dark:text-[#F87171] font-semibold text-sm hover:text-[#DC2626] dark:hover:text-[#F87171] transition-colors">
+                <button className="text-[#E8A001] dark:text-[#E8A001] font-semibold text-sm hover:text-[#E8A001] dark:hover:text-[#E8A001] transition-colors">
                   {info.action}
                 </button>
               </motion.div>
@@ -226,7 +226,7 @@ export default function Contact() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#DC2626] dark:focus:ring-[#F87171] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#E8A001] dark:focus:ring-[#E8A001] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                           placeholder="Your full name"
                         />
                       </div>
@@ -244,7 +244,7 @@ export default function Contact() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#DC2626] dark:focus:ring-[#F87171] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#E8A001] dark:focus:ring-[#E8A001] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -264,7 +264,7 @@ export default function Contact() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#DC2626] dark:focus:ring-[#F87171] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#E8A001] dark:focus:ring-[#E8A001] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                           placeholder="+233 XX XXX XXXX"
                         />
                       </div>
@@ -280,7 +280,7 @@ export default function Contact() {
                           name="service"
                           value={formData.service}
                           onChange={handleInputChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#DC2626] dark:focus:ring-[#F87171] focus:border-transparent transition-all duration-300 appearance-none bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#E8A001] dark:focus:ring-[#E8A001] focus:border-transparent transition-all duration-300 appearance-none bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200"
                         >
                           <option value="">Select a service</option>
                           <option value="property-sales">Property Sales</option>
@@ -304,7 +304,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#DC2626] dark:focus:ring-[#F87171] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#E8A001] dark:focus:ring-[#E8A001] focus:border-transparent transition-all duration-300 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                       placeholder="What can we help you with?"
                     />
                   </div>
@@ -322,7 +322,7 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         rows={5}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#DC2626] dark:focus:ring-[#F87171] focus:border-transparent transition-all duration-300 resize-none bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-[#E8A001] dark:focus:ring-[#E8A001] focus:border-transparent transition-all duration-300 resize-none bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
                         placeholder="Tell us more about your needs..."
                       />
                     </div>
@@ -337,7 +337,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-[#E8A001] text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {isSubmitting ? (
                       <>
@@ -365,7 +365,7 @@ export default function Contact() {
               {/* Interactive Map */}
               <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800">
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center gap-2">
-                  <MapPin className="w-7 h-7 text-[#DC2626] dark:text-[#F87171]" />
+                  <MapPin className="w-7 h-7 text-[#E8A001] dark:text-[#E8A001]" />
                   <span>Find Us Here</span>
                 </h3>
                 <ContactMap />

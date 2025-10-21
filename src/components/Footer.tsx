@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { 
   MapPin, 
@@ -12,7 +13,7 @@ import {
   Linkedin,
   Users,
   Briefcase,
-  Image,
+  Image as ImageIcon,
   Home,
   Calendar,
   Settings,
@@ -20,6 +21,7 @@ import {
   Hammer
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import logo from '@/app/assets/ltech-logo.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -53,11 +55,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">L</span>
+            <div className="flex items-center">
+              <div className="bg-white rounded-lg p-3">
+                <Image
+                  src={logo}
+                  alt="LTech Homes Logo"
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 object-contain"
+                />
               </div>
-              <span className="text-xl font-bold">LTech Homes</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner in Ghana&apos;s real estate market. We provide exceptional 
@@ -68,7 +75,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href="#"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gradient-to-br hover:from-[#F87171] hover:to-[#DC2626] transition-all duration-300"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-[#E8A001] transition-all duration-300"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -89,13 +96,13 @@ const Footer = () => {
                       className={cn(
                         "transition-colors duration-200 flex items-center space-x-2",
                         isActive
-                          ? "text-[#F87171]"
+                          ? "text-[#E8A001]"
                           : "text-gray-300 hover:text-white"
                       )}
                     >
                       {link.href === '/about' && <Users className="w-4 h-4" />}
                       {link.href === '/services' && <Briefcase className="w-4 h-4" />}
-                      {link.href === '/gallery' && <Image className="w-4 h-4" />} {/* eslint-disable-line jsx-a11y/alt-text */}
+                      {link.href === '/gallery' && <ImageIcon className="w-4 h-4" />}
                       {link.href === '/contact' && <Phone className="w-4 h-4" />}
                       <span>{link.label}</span>
                     </Link>
@@ -118,7 +125,7 @@ const Footer = () => {
                       className={cn(
                         "transition-colors duration-200 flex items-center space-x-2",
                         isActive
-                          ? "text-[#F87171]"
+                          ? "text-[#E8A001]"
                           : "text-gray-300 hover:text-white"
                       )}
                     >
@@ -140,7 +147,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-[#F87171] mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#E8A001] mt-0.5" />
                 <div>
                   <p className="text-gray-300 text-sm">
                     Tech Hostels, UDS<br />
@@ -149,11 +156,11 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#F87171]" />
+                <Phone className="w-5 h-5 text-[#E8A001]" />
                 <span className="text-gray-300 text-sm">+233 54 933 7820 | +233 24 693 2582</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#F87171]" />
+                <Mail className="w-5 h-5 text-[#E8A001]" />
                 <span className="text-gray-300 text-sm">info@ltechhomes.com</span>
               </div>
             </div>

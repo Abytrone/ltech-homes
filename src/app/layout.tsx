@@ -17,11 +17,24 @@ export const metadata: Metadata = {
   description: "Your trusted partner in Ghana's real estate market. We provide exceptional property solutions with integrity, innovation, and excellence.",
   keywords: "real estate, Ghana, property, homes, LTech Homes, Accra, Kumasi, property sales, rentals",
   authors: [{ name: "LTech Homes" }],
+  icons: {
+    icon: '/ltech-logo.png',
+    shortcut: '/ltech-logo.png',
+    apple: '/ltech-logo.png',
+  },
   openGraph: {
     title: "LTech Homes - Premium Real Estate in Ghana",
     description: "Your trusted partner in Ghana's real estate market. We provide exceptional property solutions with integrity, innovation, and excellence.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: '/ltech-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'LTech Homes Logo',
+      },
+    ],
   },
 };
 

@@ -153,7 +153,7 @@ export default function Services() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-              Our <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">Services</span>
+              Our <span className="text-[#E8A001]">Services</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Comprehensive real estate services designed to meet all your property needs. 
@@ -200,7 +200,7 @@ export default function Services() {
                       <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-1">
                         {service.title}
                       </h3>
-                      <p className="text-[#DC2626] dark:text-[#F87171] font-semibold">
+                      <p className="text-[#E8A001] font-semibold">
                         {service.price}
                       </p>
                     </div>
@@ -260,7 +260,7 @@ export default function Services() {
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -303,10 +303,10 @@ export default function Services() {
               >
                 <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-[#E8A001] rounded-full flex items-center justify-center mr-4">
                       <span className="text-white font-bold text-lg">{step.step}</span>
                     </div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#E8A001] rounded-2xl flex items-center justify-center">
                       <step.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -324,7 +324,7 @@ export default function Services() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-to-r from-[#DC2626] to-[#F87171]">
+      <section className="py-20 bg-[#E8A001]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -407,14 +407,14 @@ export default function Services() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="bg-[#E8A001] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Phone className="w-5 h-5" />
                 <span>Contact Us</span>
               </Link>
               <Link
                 href="/gallery"
-                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold text-lg hover:border-[#DC2626] hover:text-[#DC2626] dark:hover:border-[#F87171] dark:hover:text-[#F87171] transition-all duration-300 flex items-center justify-center space-x-2"
+                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold text-lg hover:border-[#E8A001] hover:text-[#E8A001] dark:hover:border-[#E8A001] dark:hover:text-[#E8A001] transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Home className="w-5 h-5" />
                 <span>View Properties</span>

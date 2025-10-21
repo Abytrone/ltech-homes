@@ -32,7 +32,7 @@ const customIcon = L.divIcon({
   className: 'custom-marker',
   html: `
     <div style="
-      background: linear-gradient(135deg, #DC2626, #F87171);
+      background: linear-gradient(135deg, #E8A001, #E8A001);
       border-radius: 50% 50% 50% 0;
       transform: rotate(-45deg);
       width: 40px;
@@ -66,7 +66,7 @@ export default function ContactMap() {
     return (
       <div className="h-96 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg flex items-center justify-center">
         <div className="text-center">
-          <MapPin className="w-12 h-12 text-[#DC2626] dark:text-[#F87171] mx-auto mb-2 animate-pulse" />
+          <MapPin className="w-12 h-12 text-[#E8A001] dark:text-[#E8A001] mx-auto mb-2 animate-pulse" />
           <p className="text-gray-600 dark:text-gray-300 font-semibold">Loading Map...</p>
         </div>
       </div>
@@ -102,7 +102,7 @@ export default function ContactMap() {
             </Tooltip>
             <Popup className="custom-popup">
               <div className={`p-2 min-w-[200px] ${theme === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>
-                <h3 className={`text-lg font-bold mb-2 flex items-center gap-2 ${theme === 'dark' ? 'text-[#F87171]' : 'text-[#DC2626]'}`}>
+                <h3 className={`text-lg font-bold mb-2 flex items-center gap-2 ${theme === 'dark' ? 'text-[#E8A001]' : 'text-[#E8A001]'}`}>
                   <MapPin className="w-5 h-5" />
                   Tech Hostels - UDS, {office.city}
                 </h3>
@@ -115,7 +115,7 @@ export default function ContactMap() {
                     <strong>📞 Phone:</strong><br />
                     <a 
                       href={`tel:${office.phone}`} 
-                      className={`hover:underline ${theme === 'dark' ? 'text-[#F87171]' : 'text-[#DC2626]'}`}
+                      className={`hover:underline ${theme === 'dark' ? 'text-[#E8A001]' : 'text-[#E8A001]'}`}
                     >
                       {office.phone}
                     </a>
@@ -124,7 +124,7 @@ export default function ContactMap() {
                     <strong>📧 Email:</strong><br />
                     <a 
                       href={`mailto:${office.email}`} 
-                      className={`hover:underline ${theme === 'dark' ? 'text-[#F87171]' : 'text-[#DC2626]'}`}
+                      className={`hover:underline ${theme === 'dark' ? 'text-[#E8A001]' : 'text-[#E8A001]'}`}
                     >
                       {office.email}
                     </a>
@@ -138,7 +138,7 @@ export default function ContactMap() {
                   href={`https://www.google.com/maps/dir/?api=1&destination=${office.lat},${office.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 block w-full bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white text-center py-2 px-4 rounded-lg font-semibold hover:shadow-lg transition-all"
+                  className="mt-3 block w-full bg-[#E8A001] text-white text-center py-2 px-4 rounded-lg font-semibold hover:shadow-lg transition-all"
                 >
                   Get Directions
                 </a>

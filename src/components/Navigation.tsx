@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, Users, Briefcase, Image, Phone } from 'lucide-react'
+import { Menu, X, Home, Users, Briefcase, Image as ImageIcon, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ThemeToggle from './ThemeToggle'
+import logo from '@/app/assets/ltech-logo.png'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -25,7 +27,7 @@ const Navigation = () => {
     { href: '/', label: 'Home', icon: Home },
     { href: '/about', label: 'About Us', icon: Users },
     { href: '/services', label: 'Services', icon: Briefcase },
-    { href: '/gallery', label: 'Gallery', icon: Image },
+    { href: '/gallery', label: 'Gallery', icon: ImageIcon },
     { href: '/contact', label: 'Contact', icon: Phone },
   ]
 
@@ -43,16 +45,20 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="w-10 h-10 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-lg flex items-center justify-center shadow-lg"
+              className="relative bg-white rounded-lg p-2 dark:bg-white"
             >
-              <span className="text-white font-bold text-lg">L</span>
+              <Image
+                src={logo}
+                alt="LTech Homes Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+                priority
+              />
             </motion.div>
-            <span className="text-xl font-bold bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">
-              LTech Homes
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -66,8 +72,8 @@ const Navigation = () => {
                   className={cn(
                     "relative group transition-colors duration-200",
                     isActive
-                      ? "text-[#DC2626] dark:text-[#F87171]"
-                      : "text-gray-700 dark:text-gray-300 hover:text-[#DC2626] dark:hover:text-[#F87171]"
+                      ? "text-[#E8A001] dark:text-[#E8A001]"
+                      : "text-gray-700 dark:text-gray-300 hover:text-[#E8A001] dark:hover:text-[#E8A001]"
                   )}
                 >
                   <span className="flex items-center space-x-1">
@@ -76,7 +82,7 @@ const Navigation = () => {
                   </span>
                   <motion.div
                     className={cn(
-                      "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#DC2626] to-[#F87171] transition-all duration-300",
+                      "absolute -bottom-1 left-0 h-0.5 bg-[#E8A001] transition-all duration-300",
                       isActive ? "w-full" : "w-0 group-hover:w-full"
                     )}
                     whileHover={!isActive ? { width: '100%' } : {}}
@@ -120,14 +126,14 @@ const Navigation = () => {
                     className={cn(
                       "flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors",
                       isActive
-                        ? "bg-gradient-to-r from-[#DC2626]/10 to-[#F87171]/10 text-[#DC2626] dark:text-[#F87171]"
+                        ? "bg-[#E8A001]/10 text-[#E8A001] dark:text-[#E8A001]"
                         : "hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
                     )}
                   >
                     <item.icon className={cn(
                       "w-5 h-5",
                       isActive
-                        ? "text-[#DC2626] dark:text-[#F87171]"
+                        ? "text-[#E8A001] dark:text-[#E8A001]"
                         : "text-gray-600 dark:text-gray-400"
                     )} />
                     <span>{item.label}</span>

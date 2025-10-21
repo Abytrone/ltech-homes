@@ -86,7 +86,7 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
               onClick={(e) => e.stopPropagation()}
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto"
             >
-              <div className="sticky top-0 bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white p-6 rounded-t-2xl flex justify-between items-center">
+              <div className="sticky top-0 bg-[#E8A001] text-white p-6 rounded-t-2xl flex justify-between items-center">
                 <div>
                   <h2 className="text-2xl font-bold mb-1">Property Inquiry</h2>
                   <p className="text-white/90 text-sm">{property.title}</p>
@@ -117,11 +117,11 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="p-6 space-y-6">
-                  <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border-l-4 border-[#DC2626]">
+                  <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border-l-4 border-[#E8A001]">
                     <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Property Details</div>
                     <div className="font-semibold text-gray-800 dark:text-gray-200">{property.title}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">📍 {property.location}</div>
-                    <div className="text-lg font-bold text-[#DC2626] dark:text-[#F87171] mt-1">{property.price}</div>
+                    <div className="text-lg font-bold text-[#E8A001] dark:text-[#E8A001] mt-1">{property.price}</div>
                   </div>
 
                   <div className="space-y-4">
@@ -137,7 +137,7 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] dark:bg-gray-800 dark:text-white"
+                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E8A001] dark:bg-gray-800 dark:text-white"
                           placeholder="Enter your full name"
                         />
                       </div>
@@ -155,7 +155,7 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] dark:bg-gray-800 dark:text-white"
+                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E8A001] dark:bg-gray-800 dark:text-white"
                           placeholder="your.email@example.com"
                         />
                       </div>
@@ -172,7 +172,7 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] dark:bg-gray-800 dark:text-white"
+                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E8A001] dark:bg-gray-800 dark:text-white"
                           placeholder="+233 XX XXX XXXX"
                         />
                       </div>
@@ -190,7 +190,7 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
                           onChange={handleInputChange}
                           required
                           rows={4}
-                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DC2626] dark:bg-gray-800 dark:text-white resize-none"
+                          className="w-full pl-11 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E8A001] dark:bg-gray-800 dark:text-white resize-none"
                           placeholder="Tell us more about your requirements..."
                         />
                       </div>
@@ -214,7 +214,7 @@ export default function PropertyInquiryModal({ isOpen, onClose, property }: Prop
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex-1 px-6 py-3 bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+                      className="flex-1 px-6 py-3 bg-[#E8A001] text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <>

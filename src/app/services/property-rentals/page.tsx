@@ -179,15 +179,15 @@ export default function PropertyRentalsPage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#DC2626]/10 to-[#F87171]/10 dark:from-[#DC2626]/20 dark:to-[#F87171]/20 border border-[#DC2626]/20 dark:border-[#DC2626]/30 backdrop-blur-sm mb-8"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#E8A001]/10 to-[#E8A001]/10 dark:from-[#E8A001]/20 dark:to-[#E8A001]/20 border border-[#E8A001]/20 dark:border-[#E8A001]/30 backdrop-blur-sm mb-8"
               >
-                <Home className="w-5 h-5 text-[#DC2626] dark:text-[#F87171] mr-3" />
+                <Home className="w-5 h-5 text-[#E8A001] dark:text-[#E8A001] mr-3" />
                 <span className="text-sm font-medium text-gray-700 dark:text-white/90">Property Rentals</span>
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6">
                 Find Your Perfect
-                <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent ml-4">
+                <span className="bg-[#E8A001] bg-clip-text text-transparent ml-4">
                   Rental Home
                 </span>
               </h1>
@@ -200,7 +200,7 @@ export default function PropertyRentalsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#DC2626] to-[#F87171] text-white rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 bg-[#E8A001] text-white rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
                   <Search className="w-5 h-5 mr-2" />
                   Browse Rentals
@@ -208,7 +208,7 @@ export default function PropertyRentalsPage() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold text-lg hover:border-[#DC2626] hover:text-[#DC2626] dark:hover:border-[#F87171] dark:hover:text-[#F87171] transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold text-lg hover:border-[#E8A001] hover:text-[#E8A001] dark:hover:border-[#E8A001] dark:hover:text-[#E8A001] transition-all duration-300"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Get Rental Help
@@ -245,7 +245,7 @@ export default function PropertyRentalsPage() {
                   whileHover={{ y: -10 }}
                   className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 text-center border border-gray-200 dark:border-gray-800"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <type.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -255,7 +255,7 @@ export default function PropertyRentalsPage() {
                     {type.description}
                   </p>
                   <div className="space-y-2">
-                    <div className="text-2xl font-bold text-[#DC2626] dark:text-[#F87171]">
+                    <div className="text-2xl font-bold text-[#E8A001] dark:text-[#E8A001]">
                       {type.count}
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -295,7 +295,7 @@ export default function PropertyRentalsPage() {
                   whileHover={{ y: -5 }}
                   className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-800"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -337,10 +337,10 @@ export default function PropertyRentalsPage() {
                   className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800"
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-[#E8A001] rounded-full flex items-center justify-center mr-4">
                       <span className="text-white font-bold text-lg">{step.step}</span>
                     </div>
-                    <step.icon className="w-6 h-6 text-[#DC2626] dark:text-[#F87171]" />
+                    <step.icon className="w-6 h-6 text-[#E8A001] dark:text-[#E8A001]" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
                     {step.title}
@@ -380,14 +380,14 @@ export default function PropertyRentalsPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center border border-gray-200 dark:border-gray-800"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <location.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
                     {location.city}
                   </h3>
                   <div className="space-y-2">
-                    <div className="text-lg font-semibold text-[#DC2626] dark:text-[#F87171]">
+                    <div className="text-lg font-semibold text-[#E8A001] dark:text-[#E8A001]">
                       {location.properties}
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-300">
@@ -426,7 +426,7 @@ export default function PropertyRentalsPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-800"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <benefit.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -442,7 +442,7 @@ export default function PropertyRentalsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-[#DC2626] to-[#F87171]">
+        <section className="py-20 bg-[#E8A001]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -458,14 +458,14 @@ export default function PropertyRentalsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-white text-[#DC2626] rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 bg-white text-[#E8A001] rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Get Rental Assistance
                 </Link>
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg hover:bg-white hover:text-[#DC2626] transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold text-lg hover:bg-white hover:text-[#E8A001] transition-all duration-300"
                 >
                   <Search className="w-5 h-5 mr-2" />
                   Browse Rentals

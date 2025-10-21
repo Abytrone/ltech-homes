@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   Users, 
   Target, 
@@ -8,6 +9,7 @@ import {
   Heart,
   Calendar
 } from 'lucide-react'
+import logo from '@/app/assets/ltech-logo.png'
 
 export default function About() {
   const values = [
@@ -99,8 +101,24 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center mb-8"
+            >
+              <div className="bg-white rounded-2xl p-4 shadow-lg">
+                <Image
+                  src={logo}
+                  alt="LTech Homes Logo"
+                  width={120}
+                  height={120}
+                  className="w-30 h-30 object-contain"
+                />
+              </div>
+            </motion.div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-              About <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">LTech Homes</span>
+              About <span className="text-[#E8A001]">LTech Homes</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Your trusted partner in Ghana&apos;s real estate market for over 15 years. 
@@ -148,7 +166,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl p-8 text-white">
+              <div className="bg-[#E8A001] rounded-2xl p-8 text-white">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-2">15+</div>
@@ -200,7 +218,7 @@ export default function About() {
                 whileHover={{ y: -5 }}
                 className="text-center p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#E8A001] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
@@ -242,7 +260,7 @@ export default function About() {
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-800"
               >
-                <div className="h-48 bg-gradient-to-br from-[#DC2626] to-[#F87171] flex items-center justify-center">
+                <div className="h-48 bg-[#E8A001] flex items-center justify-center">
                   <div className="w-24 h-24 bg-white dark:bg-gray-900/20 rounded-full flex items-center justify-center">
                     <span className="text-3xl font-bold text-gray-800 dark:text-white">
                       {member.name.split(' ').map(n => n[0]).join('')}
@@ -253,7 +271,7 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-[#DC2626] dark:text-[#F87171] font-medium mb-2">
+                  <p className="text-[#E8A001] font-medium mb-2">
                     {member.position}
                   </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
@@ -288,7 +306,7 @@ export default function About() {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#DC2626] to-[#F87171] rounded-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#E8A001] rounded-full"></div>
             
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
@@ -302,8 +320,8 @@ export default function About() {
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-800">
                       <div className="flex items-center space-x-2 mb-2">
-                        <Calendar className="w-5 h-5 text-[#DC2626] dark:text-[#F87171]" />
-                        <span className="text-[#DC2626] dark:text-[#F87171] font-semibold">{milestone.year}</span>
+                        <Calendar className="w-5 h-5 text-[#E8A001]" />
+                        <span className="text-[#E8A001] font-semibold">{milestone.year}</span>
                       </div>
                       <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
                         {milestone.title}
@@ -315,7 +333,7 @@ export default function About() {
                   </div>
                   
                   {/* Timeline Dot */}
-                  <div className="relative z-10 w-4 h-4 bg-gradient-to-br from-[#DC2626] to-[#F87171] rounded-full border-4 border-white shadow-lg"></div>
+                  <div className="relative z-10 w-4 h-4 bg-[#E8A001] rounded-full border-4 border-white shadow-lg"></div>
                   
                   <div className="w-1/2"></div>
                 </motion.div>
@@ -326,7 +344,7 @@ export default function About() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-20 bg-gradient-to-r from-[#DC2626] to-[#F87171]">
+      <section className="py-20 bg-[#E8A001]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
